@@ -1,0 +1,189 @@
+<script src="https://kit.fontawesome.com/66f2ade9df.js" crossorigin="anonymous"></script>
+<div class="tool-bar">
+<button
+        class="align"
+        href="javascript:void(0)"                                 
+        onclick="format('bold')">
+<i class="fas fa-bold"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                         
+        onclick="format('strikeThrough')">
+<i class="fas fa-strikethrough"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                            
+        onclick="format('subscript')">
+<i class="fas fa-subscript"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                            
+        onclick="format('superscript')">
+<i class="fas fa-superscript"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                             
+        onclick="format('insertUnorderedList')">
+<i class="fas fa-list-ul"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                             
+        onclick="format('insertOrderedList')">
+<i class="fas fa-list-ol"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                              
+        onclick="format('underline')">
+<i class="fas fa-underline"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                                
+        onclick="format('italic')">
+<i class="fas fa-italic"></i>
+        </button>
+  <select class="Size" onclick="execCommandWithArg('fontName', this.value);">
+    <option value="Arial">Arial</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Comic Sans MS">Comic Sans Ms</option>
+</select>
+  <select class="Size" onclick="execCommandWithArg('fontSize', this.value);">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+</select>
+  <select Class ="Size" onclick="execCommandWithArg('formatBlock',this.value)">
+    <option value="H1">H1</option>
+    <option value="H2">H2</option>
+    <option value="H3">H3</option>
+    <option value="H4">H4</option>
+    <option value="H5">H5</option>
+    <option value="H6">H6</option>
+</select>
+  <input id="color1" type="color" onchange="execCommandWithArg('forecolor', this.value);"></input>
+  <input class="color" type="color" onchange="execCommandWithArg('hilitecolor', this.value);"></input>
+  <button
+          class="align"
+          onclick="execCommand('createLink', prompt('Enter a URL', 'http://'))"><i class="fas fa-link"></i></button>
+  <button
+          class="align"
+          onclick=('unlink')><i class="fas fa-unlink"></i></button>
+<button
+        class="align"
+        href="javascript:void(0)"                            
+        onclick="format('justifyCenter')">
+<i class="fas fa-align-center"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                              
+        onclick="format('justifyLeft')">
+<i class="fas fa-align-left"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                               
+        onclick="format('justifyRight')">
+<i class="fas fa-align-right"></i>
+        </button>
+<button
+        class="align"
+        href="javascript:void(0)"                                
+        onclick="format('justifyFull')">
+<i class="fas fa-align-justify"></i>
+        </button>
+<br>
+<button
+        class="align2"
+        href="javascript:void(0)"                                 
+        onclick="format('undo')">
+<i class="fas fa-undo"></i>
+        </button>
+<button
+        class="align3"
+        href="javascript:void(0)"                                 
+        onclick="format('redo')">
+<i class="fas fa-redo"></i>
+        </button>
+</div>
+<div id="output" contenteditable='true'></div>
+<html>
+  <style>
+.tool-bar{
+  display: flex;
+}
+.align{
+  width: 40px;
+  border: none;
+  height: 40px;
+  margin: 0.5rem;
+  font-size: 20px;
+}
+.align2{
+  width: 40px;
+  border: none;
+  height: 40px;
+  margin-left: 0.5rem;
+  margin-right:0.1rem;
+  margin-top: 0.5rem;
+  font-size: 20px;
+}
+.align3{
+  width: 40px;
+  border: none;
+  height: 40px;
+  margin-left:0.1rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 20px;
+}
+#color{
+  width: 30px;
+  height: 15px;
+  margin: 0.5rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 25px;
+  padding-bottom: 1px;
+}
+.color1{
+  width: 30px;
+  height: 15px;
+  margin: 0.5rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 25px;
+  padding-bottom: 1px;
+ }
+.Size{
+  width: 40px;
+  height: 40px;
+  margin: 0.5rem;
+}
+#output{
+  height: 800px;
+  width: 90%;
+  box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.4);
+  margin: auto;
+  padding: 2rem;
+}
+  </style>
+  <script>
+  function format(command, value){
+  document.execCommand(command, false, value)
+}
+function execCommandWithArg(command, arg){
+  document.execCommand(command, false, arg)
+}
+  </script>
+</html>
